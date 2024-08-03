@@ -4,37 +4,7 @@ import React from 'react'
 const AssestList = () => {
     return (
         <View style={styles.container}>
-          <View style={styles.sortButtonContainer}>
-            <Text style={styles.header}>Recent Non-exited Entries</Text>
-            <TouchableOpacity onPress={()=>{}}>
-              <FontAwesome
-                name={sortOrder === 'asc' ? 'arrow-up' : 'arrow-down'}
-                size={24}
-                color="black"
-              />
-            </TouchableOpacity>
-          </View>
-          {entities.length === 0 ? (
-            <View style={styles.noEntriesContainer}>
-              <Text style={styles.noEntriesText}>No entries found.</Text>
-              <TouchableOpacity onPress={() => navigation.navigate('')}>
-                <Text style={styles.newEntryText}>Create Entry</Text>
-              </TouchableOpacity>
-            </View>
-          ) : (
-            <FlatList
-              data={entities}
-              keyExtractor={(item) => item._id.toString()}
-              renderItem={({ item }) => (
-                <TouchableOpacity onPress={() => navigation.navigate('ExitEntry', { selectedEntry: item })}>
-                  <View style={styles.itemContainer}>
-                    <Text style={styles.title}>{item.vehicleNumber}</Text>
-                    <Text style={styles.subtitle}>{new Date(item.createdAt).toLocaleString()}</Text>
-                  </View>
-                </TouchableOpacity>
-              )}
-            />
-          )}
+
         </View>
       );
     };
